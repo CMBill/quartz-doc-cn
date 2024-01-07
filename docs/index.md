@@ -40,8 +40,6 @@ npx quartz create
 
 ### 🚧 故障排除与更新
 
-Having trouble with Quartz? Try searching for your issue using the search feature. If you haven't already, [[upgrading|upgrade]] to the newest version of Quartz to see if this fixes your issue.
-
 在使用 Quartz 时存在问题？尝试使用搜索功能来寻找您遇到的问题的解决方法。如果您没有使用最新版本，尝试将 Quartz [[upgrading|更新]] 到最新版本，再看看有没有解决问题。
 
 如果您仍然还存有疑问或发现了 bug，可以在 Github 仓库[提交 issue](https://github.com/jackyzha0/quartz/issues)，或在我们的 [Discord 社区](https://discord.gg/cRFFHYye7t)寻求帮助。
