@@ -2,7 +2,7 @@
 title: 创作内容
 ---
 
-Quartz 中的所有内容都应当被放置在 `/content` 文件夹内，主页的内容应该在 `content/index.md`。如果你已经安装好了 Quartz，`/content` 文件夹应该已经被初始化，处于此文件夹下的所有 Markdown 内容都将由 Quartz 处理。
+Quartz 中的所有内容都应当被放置在 `/content` 文件夹内，主页的内容应该在 `content/index.md`。如果你已经[[index#🪴 Get Started|安装好]]了 Quartz，`/content` 文件夹应该已经被初始化，处于此文件夹下的所有 Markdown 内容都将由 Quartz 处理。
 
 推荐使用 [Obsidian](https://obsidian.md/) 作为编辑和维护 Quartz 的工具，它拥有一个漂亮的编辑器和图形界面，可以直观地预览、编辑，也能方便地将附件链接到您的文件。
 
