@@ -1,40 +1,40 @@
 ---
-title: Hosting
+title: 托管
 ---
 
-Quartz effectively turns your Markdown files and other resources into a bundle of HTML, JS, and CSS files (a website!).
+Quartz 能够高效地将您的 Markdown 文件和其他资源转换为一个 HTML、JS 和 CSS 文件的捆绑包（也就是一个网站！）。
 
-However, if you'd like to publish your site to the world, you need a way to host it online. This guide will detail how to deploy with common hosting providers but any service that allows you to deploy static HTML should work as well.
+但是，如果您想向全世界发布您的网站，则需要一种在线托管网站的方法。本指南将详细介绍如何使用常见的托管提供商进行部署，但任何允许您部署静态 HTML 的服务也应该可以工作。
 
-> [!warning]
-> The rest of this guide assumes that you've already created your own GitHub repository for Quartz. If you haven't already, [[setting up your GitHub repository|make sure you do so]].
+> [!warning] 警告
+> 本指南的其余部分假设您已经为 Quartz 创建了自己的 GitHub 存储库。如果还没有，您可以参阅[[setting up your GitHub repository|此页面]]此页面。
 
-> [!hint]
-> Some Quartz features (like [[RSS Feed]] and sitemap generation) require `baseUrl` to be configured properly in your [[configuration]] to work properly. Make sure you set this before deploying!
+> [!hint] 提示
+> Quartz 的某些功能（例如 [[RSS Feed]] 和站点地图生成）需要在[[configuration|配置]]中正确配置 `baseUrl` 才能正常工作。确保在部署之前进行设置！
 
 ## Cloudflare Pages
 
-1. Log in to the [Cloudflare dashboard](https://dash.cloudflare.com/) and select your account.
-2. In Account Home, select **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
-3. Select the new GitHub repository that you created and, in the **Set up builds and deployments** section, provide the following information:
+1. 登录 [Cloudflare 仪表板](https://dash.cloudflare.com/)并选择您的帐户。
+2. 在帐户主页中，选择 **Workers & Pages** > **创建应用程序** > **Pages** > **链接到  Git**.
+3. 选择您创建的新 GitHub 存储库，并在**设置构建和部署**部分中提供以下信息：
 
-| Configuration option   | Value              |
+| 配置选项               | 值                 |
 | ---------------------- | ------------------ |
-| Production branch      | `v4`               |
-| Framework preset       | `None`             |
-| Build command          | `npx quartz build` |
-| Build output directory | `public`           |
+| 生产分支               | `v4`               |
+| 框架预设               | `无`               |
+| 构建命令               | `npx quartz build` |
+| 构建输出目录           | `public`           |
 
-Press "Save and deploy" and Cloudflare should have a deployed version of your site in about a minute. Then, every time you sync your Quartz changes to GitHub, your site should be updated.
+单击“保存并部署”，Cloudflare 应该会在大约一分钟内完成您站点的部署。而在之后您每次将 Quartz 更改同步到 GitHub 时，您的站点都会同步更新。
 
-To add a custom domain, check out [Cloudflare's documentation](https://developers.cloudflare.com/pages/platform/custom-domains/).
+要添加自定义域，请参阅[Cloudflare 的文档](https://developers.cloudflare.com/pages/platform/custom-domains/)。
 
-> [!warning]
-> Cloudflare Pages only allows shallow `git` clones so if you rely on `git` for timestamps, it is recommended you either add dates to your frontmatter (see [[authoring content#Syntax]]) or use another hosting provider.
+> [!warning] 警告
+> Cloudflare Pages 仅允许浅层 `git` 克隆，因此如果您依赖 `git` 获取时间戳，建议您向 `frontmatter` 添加日期（请参阅[[authoring content#Syntax|语法]]）或使用其他托管服务。
 
 ## GitHub Pages
 
-In your local Quartz, create a new file `quartz/.github/workflows/deploy.yml`.
+在您的本地 Quartz 中，创建一个新文件 `quartz/.github/workflows/deploy.yml`。
 
 ```yaml title="quartz/.github/workflows/deploy.yml"
 name: Deploy Quartz site to GitHub Pages
@@ -84,20 +84,20 @@ jobs:
         uses: actions/deploy-pages@v2
 ```
 
-Then:
+然后：
 
-1. Head to "Settings" tab of your forked repository and in the sidebar, click "Pages". Under "Source", select "GitHub Actions".
-2. Commit these changes by doing `npx quartz sync`. This should deploy your site to `<github-username>.github.io/<repository-name>`.
+1. 前往您 GitHub 仓库的 Settings 选项卡，在侧栏选择 Pages，在 Source 中选择 GitHub Actions。
+2. 在本地仓库执行命令 `npx quartz sync` 来提交更改，这应当会将您的网站部署到 `<github-username>.github.io/<repository-name>`.
 
-> [!hint]
-> If you get an error about not being allowed to deploy to `github-pages` due to environment protection rules, make sure you remove any existing GitHub pages environments.
+> [!hint] 提示
+> 如果您收到有关 environment protection 相关规则而不能部署到 `github-pages`，请确保删除任何现有的 GitHub Pages 环境。
 >
-> You can do this by going to your Settings page on your GitHub fork and going to the Environments tab and pressing the trash icon. The GitHub action will recreate the environment for you correctly the next time you sync your Quartz.
+> 您可以通过在 GitHub 仓库的 Settings 选项卡中选择 Environments 选项，并单击垃圾桶的图标来删除，在下次同步 Quartz 时，GitHub Action 将正确地为您重新创建环境。
 
-> [!info]
-> Quartz generates files in the format of `file.html` instead of `file/index.html` which means the trailing slashes for _non-folder paths_ are dropped. As GitHub pages does not do this redirect, this may cause existing links to your site that use trailing slashes to break. If not breaking existing links is important to you (e.g. you are migrating from Quartz 3), consider using [[#Cloudflare Pages]].
+> [!info] 信息
+> Quartz 将生成格式为 `file.html` 而不是 `file/index.html` 的文件，这意味着非文件夹路径的尾部斜杠将被删除。由于 GitHub Pages 不执行此重定向，因此这可能会导致使用尾部斜杠的现有网站链接中断。如果不破坏现有链接对您很重要（例如您要从 Quartz 3 迁移），请考虑使用 [[#Cloudflare Pages]。
 
-### Custom Domain
+### 自定义域 名
 
 Here's how to add a custom domain to your GitHub pages deployment.
 

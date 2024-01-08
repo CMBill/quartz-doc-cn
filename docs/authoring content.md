@@ -42,7 +42,7 @@ Quartz 原生支持的一些常见的 frontmatter 字段：
 > 其中大多数都有合理的默认值，但如果您需要自定义设置，则可以覆盖它们：
 >
 > - `-d` 或 `--directory`: 指定内容文件夹，默认为 `content`
-> - `-v`或`--verbose`: 输出额外的日志
-> - `--commit`或`--no-commit`: 是否为您的更改进行 `git` 提交
-> - `--push`或`--no-push`: 是否将您的更改推送到您的 Github 仓库
-> - `--pull`或`--no-pull`: 在推送之前是否尝试从 GitHub 分支（即从其他设备）提取任何更新
+> - `-v` 或 `--verbose`: 输出额外的日志
+> - `--commit` 或 `--no-commit`: 是否为您的更改进行 `git` 提交
+> - `--push` 或 `--no-push`: 是否将您的更改推送到您的 Github 仓库
+> - `--pull` 或 `--no-pull`: 在推送之前是否尝试从 GitHub 分支（即从其他设备）提取任何更新
