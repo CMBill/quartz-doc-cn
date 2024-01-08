@@ -30,7 +30,7 @@ npx quartz create
 
 ## 🔧 特性
 
-- [[Obsidian compatibility|Obsidian 兼容性]]，[[full-text search|全文搜索]]，[[graph view|关系图谱]]，注释嵌入，[[wikilinks|Wiki Links]]，[[backlinks|反向链接]]，[[Latex]]，[[syntax highlighting|语法高亮]]，[[popover previews|悬浮预览窗]]，[[Docker Support|支持 Docker]]，以及[更多开箱即用的功能](./features)
+- [[Obsidian compatibility|Obsidian 兼容性]]，[[full-text search|全文搜索]]，[[graph view|关系图谱]]，注释嵌入，[[wikilinks|Wiki 链接]]，[[backlinks|反向链接]]，[[Latex]]，[[syntax highlighting|语法高亮]]，[[popover previews|悬浮预览窗]]，[[Docker Support|支持 Docker]]，以及[更多开箱即用的功能](./features)
 - 配置文件和内容的热重载
 - 简单的 JSX 布局和[[creating components|页面组件]]
 - [[SPA Routing|极快的页面加载速度]]和极小的捆绑包大小

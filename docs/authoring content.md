@@ -1,18 +1,18 @@
 ---
-title: Authoring Content
+title: 创作内容
 ---
 
-All of the content in your Quartz should go in the `/content` folder. The content for the home page of your Quartz lives in `content/index.md`. If you've [[index#🪴 Get Started|setup Quartz]] already, this folder should already be initailized. Any Markdown in this folder will get processed by Quartz.
+Quartz 中的所有内容都应当被放置在 `/content` 文件夹内，主页的内容应该在 `content/index.md`。如果你已经安装好了 Quartz，`/content` 文件夹应该已经被初始化，处于此文件夹下的所有 Markdown 内容都将由 Quartz 处理。
 
-It is recommended that you use [Obsidian](https://obsidian.md/) as a way to edit and maintain your Quartz. It comes with a nice editor and graphical interface to preview, edit, and link your local files and attachments.
+推荐使用 [Obsidian](https://obsidian.md/) 作为编辑和维护 Quartz 的工具，它拥有一个漂亮的编辑器和图形界面，可以直观地预览、编辑，也能方便地将附件链接到您的文件。
 
-Got everything setup? Let's [[build]] and preview your Quartz locally!
+如果一切都被设置好了，让我们在本地[[build|构建]]并预览您的 Quartz！
 
-## Syntax
+## 语法
 
-As Quartz uses Markdown files as the main way of writing content, it fully supports Markdown syntax. By default, Quartz also ships with a few syntax extensions like [Github Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) (footnotes, strikethrough, tables, tasklists) and [Obsidian Flavored Markdown](https://help.obsidian.md/Editing+and+formatting/Obsidian+Flavored+Markdown) ([[callouts]], [[wikilinks]]).
+由于 Quartz 使用 Markdown 文件作为编写内容的主要方式，因此它完全支持 Markdown 语法。默认情况下，Quartz 还附带一些语法扩展，例如 [Github Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)（脚注、删除线、表格、任务列表）和 [Obsidian Flavored Markdown](https://help.obsidian.md/Editing+and+formatting/Obsidian+Flavored+Markdown)（[[callouts|标注]]、[[wikilinks|Wiki 链接]]）。
 
-Additionally, Quartz also allows you to specify additional metadata in your notes called **frontmatter**.
+此外，Quartz 还允许您在文件中指定被称为 **frontmatter** 的附加元数据。
 
 ```md title="content/note.md"
 ---
@@ -25,24 +25,24 @@ tags:
 The rest of your content lives here. You can use **Markdown** here :)
 ```
 
-Some common frontmatter fields that are natively supported by Quartz:
+Quartz 原生支持的一些常见的 frontmatter 字段：
 
-- `title`: Title of the page. If it isn't provided, Quartz will use the name of the file as the title.
-- `aliases`: Other names for this note. This is a list of strings.
-- `draft`: Whether to publish the page or not. This is one way to make [[private pages|pages private]] in Quartz.
-- `date`: A string representing the day the note was published. Normally uses `YYYY-MM-DD` format.
+- `title`: 页面标题。如果未提供，Quartz 将使用文件名作为标题。
+- `aliases`: 此文章的其他名称。这是一个字符串列表。
+- `draft`: 是否发布页面。这是在 Quartz 中将页面设置为[[private pages|私有]]的一种方法。
+- `date`: 表示注释发布日期的字符串。通常使用 `YYYY-MM-DD` 格式。
 
-## Syncing your Content
+## 同步您的内容
 
-When your Quartz is at a point you're happy with, you can save your changes to GitHub by doing `npx quartz sync`.
+当您对您 Quartz 的内容感到满意时，您可以通过执行 `npx quartz sync` 将更改同步保存到 GitHub。
 
-> [!hint] Flags and options
-> For full help options, you can run `npx quartz sync --help`.
+> [!hint] 其他参数选项
+> 要获得完整的帮助选项，您可以运行 `npx quartz sync --help`.
 >
-> Most of these have sensible defaults but you can override them if you have a custom setup:
+> 其中大多数都有合理的默认值，但如果您需要自定义设置，则可以覆盖它们：
 >
-> - `-d` or `--directory`: the content folder. This is normally just `content`
-> - `-v` or `--verbose`: print out extra logging information
-> - `--commit` or `--no-commit`: whether to make a `git` commit for your changes
-> - `--push` or `--no-push`: whether to push updates to your GitHub fork of Quartz
-> - `--pull` or `--no-pull`: whether to try and pull in any updates from your GitHub fork (i.e. from other devices) before pushing
+> - `-d` 或 `--directory`: 指定内容文件夹，默认为 `content`
+> - `-v`或`--verbose`: 输出额外的日志
+> - `--commit`或`--no-commit`: 是否为您的更改进行 `git` 提交
+> - `--push`或`--no-push`: 是否将您的更改推送到您的 Github 仓库
+> - `--pull`或`--no-pull`: 在推送之前是否尝试从 GitHub 分支（即从其他设备）提取任何更新

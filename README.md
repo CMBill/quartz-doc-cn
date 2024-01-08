@@ -1,4 +1,4 @@
-# Quartz v4 中文问档
+# Quartz v4 中文文档
 
 **本仓库提供 [Quartz 4](https://github.com/jackyzha0/quartz) 文档的中文翻译，目前正在翻译中**
 
