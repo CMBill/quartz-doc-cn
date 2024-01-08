@@ -27,10 +27,10 @@ The rest of your content lives here. You can use **Markdown** here :)
 
 Quartz 原生支持的一些常见的 frontmatter 字段：
 
-- `title`: 页面标题。如果未提供，Quartz 将使用文件名作为标题。
-- `aliases`: 此文章的其他名称。这是一个字符串列表。
-- `draft`: 是否发布页面。这是在 Quartz 中将页面设置为[[private pages|私有]]的一种方法。
-- `date`: 表示注释发布日期的字符串。通常使用 `YYYY-MM-DD` 格式。
+- `title`：页面标题。如果未提供，Quartz 将使用文件名作为标题。
+- `aliases`：此文章的其他名称。这是一个字符串列表。
+- `draft`：是否发布页面。这是在 Quartz 中将页面设置为[[private pages|私有]]的一种方法。
+- `date`：表示注释发布日期的字符串。通常使用 `YYYY-MM-DD` 格式。
 
 ## 同步您的内容
 
