@@ -94,10 +94,10 @@ jobs:
 >
 > 您可以通过在 GitHub 仓库的 Settings 选项卡中选择 Environments 选项，并单击垃圾桶的图标来删除，在下次同步 Quartz 时，GitHub Action 将正确地为您重新创建环境。
 
-> [!info] 信息
+> [!info] 
 > Quartz 将生成格式为 `file.html` 而不是 `file/index.html` 的文件，这意味着非文件夹路径的尾部斜杠将被删除。由于 GitHub Pages 不执行此重定向，因此这可能会导致使用尾部斜杠的现有网站链接中断。如果不破坏现有链接对您很重要（例如您要从 Quartz 3 迁移），请考虑使用 [[#Cloudflare Pages]。
 
-### 自定义域 名
+### 自定义域名
 
 Here's how to add a custom domain to your GitHub pages deployment.
 

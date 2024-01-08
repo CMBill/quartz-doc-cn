@@ -25,7 +25,7 @@ npx quartz create
 4. [[build|构建并预览]] Quartz
 5. [[hosting|在线托管]] Quartz
 
-> [!INFO]
+> [!info] 
 > 由 Quartz 3 迁移而来？请参阅[[migrating from Quartz 3|迁移指南]]，了解 Quartz 3 和 Quartz 4 之间的差异以及如何迁移。
 
 ## 🔧 特性

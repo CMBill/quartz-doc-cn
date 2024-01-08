@@ -4,7 +4,7 @@ title: 配置
 
 即使您不了解任何代码，Quartz 也具有极高的可配置性。您需要的大部分配置只需编辑 `quartz.config.ts` 文件，或者在 `quartz.layout.ts` 中更改[[layout|布局]]。
 
-> [!tip]
+> [!tip] 
 > 如果您使用支持 TypeScript 语言的文本编辑器（如 VSCode）编辑 Quartz 配置，当您在配置中出现错误时，它会向您发出警告，帮助您避免配置错误！
 
 Quartz 的配置可以分为两个主要部分：
