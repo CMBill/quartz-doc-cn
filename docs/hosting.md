@@ -95,37 +95,37 @@ jobs:
 > 您可以通过在 GitHub 仓库的 Settings 选项卡中选择 Environments 选项，并单击垃圾桶的图标来删除，在下次同步 Quartz 时，GitHub Action 将正确地为您重新创建环境。
 
 > [!info] 
-> Quartz 将生成格式为 `file.html` 而不是 `file/index.html` 的文件，这意味着非文件夹路径的尾部斜杠将被删除。由于 GitHub Pages 不执行此重定向，因此这可能会导致使用尾部斜杠的现有网站链接中断。如果不破坏现有链接对您很重要（例如您要从 Quartz 3 迁移），请考虑使用 [[#Cloudflare Pages]。
+> Quartz 将生成格式为 `file.html` 而不是 `file/index.html` 的文件，这意味着非文件夹路径的尾部斜杠将被删除。由于 GitHub Pages 不执行此重定向，因此这可能会导致使用尾部斜杠的现有网站链接中断。如果不破坏现有链接对您很重要（例如您要从 Quartz 3 迁移），请考虑使用 [[#Cloudflare Pages]]。
 
 ### 自定义域名
 
-Here's how to add a custom domain to your GitHub pages deployment.
+以下是将自定义域名添加到 GitHub Pages 的方法：
 
-1. Head to the "Settings" tab of your forked repository.
-2. In the "Code and automation" section of the sidebar, click "Pages".
-3. Under "Custom Domain", type your custom domain and click "Save".
-4. This next step depends on whether you are using an apex domain (`example.com`) or a subdomain (`subdomain.example.com`).
-   - If you are using an apex domain, navigate to your DNS provider and create an `A` record that points your apex domain to GitHub's name servers which have the following IP addresses:
+1. 前往您的 GitHub 仓库的 Settings 选项卡。
+2. 在侧栏选择 Pages。
+3. 在 Custom Domain 下，输入您的自定义域并单击 Save。
+4. 下一步取决于您使用的是顶级域（`example.com`）还是子域（`subdomain.example.com`）。
+   - 如果您使用的是顶级域，请在您的 DNS 提供商的控制台创建一个 `A` 记录，将您的顶级域指向以下 IP 地址：
      - `185.199.108.153`
      - `185.199.109.153`
      - `185.199.110.153`
      - `185.199.111.153`
-   - If you are using a subdomain, navigate to your DNS provider and create a `CNAME` record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `quartz.example.com` for your user site, create a `CNAME` record that points `quartz.example.com` to `<github-username>.github.io`.
+   - 如果您使用子域，请导航到您的 DNS 提供商并创建一个 `CNAME` 记录，将您的子域指向您 Github Pages 网站的默认域。例如，如果您想要将子域 `quartz.example.com` 用于您的站点，请创建一个将 `quartz.example.com` 指向 `<github-username>.github.io` 的 `CNAME` 记录。
 
-![[dns records.png]]_The above shows a screenshot of Google Domains configured for both `jzhao.xyz` (an apex domain) and `quartz.jzhao.xyz` (a subdomain)._
+![[dns records.png]]_为 `jzhao.xyz` （顶级域）和 `quartz.jzhao.xyz` （子域）配置 DNS 记录的 Google Domains 的屏幕截图。_
 
-See the [GitHub documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain) for more detail about how to setup your own custom domain with GitHub Pages.
+有关为 GitHub Pages 设置您自己的自定义域的更多详细信息，请参阅[GitHub 文档](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain) 。
 
-> [!question] Why aren't my changes showing up?
-> There could be many different reasons why your changes aren't showing up but the most likely reason is that you forgot to push your changes to GitHub.
+> [!question] 为什么我的更改没有显示出来？
+> 您的更改未显示的原因可能有很多，但最可能的原因是您忘记将更改推送到 GitHub。
 >
-> Make sure you save your changes to Git and sync it to GitHub by doing `npx quartz sync`. This will also make sure to pull any updates you may have made from other devices so you have them locally.
+> 确保将更改保存到 Git 并通过执行 `npx quartz sync` 将其同步到 GitHub。这也将确保提取您可能从其他设备进行的任何更新，以便同时同步到本地。
 
 ## Vercel
 
 ### Fix URLs
 
-Before deploying to Vercel, a `vercel.json` file is required at the root of the project directory. It needs to contain the following configuration so that URLs don't require the `.html` extension:
+在部署到 Vercel 之前，项目目录的根目录下需要放置一个 `vercel.json` 文件，需要包含以下配置，以便 URL 不需要 `.html` 扩展名：
 
 ```json title="vercel.json"
 {
@@ -133,12 +133,12 @@ Before deploying to Vercel, a `vercel.json` file is required at the root of the 
 }
 ```
 
-### Deploy to Vercel
+### 部署到 Vercel
 
-1. Log in to the [Vercel Dashboard](https://vercel.com/dashboard) and click "Add New..." > Project
-2. Import the Git repository containing your Quartz project.
-3. Give the project a name (lowercase characters and hyphens only)
-4. Check that these configuration options are set:
+1. 登录 [Vercel Dashboard](https://vercel.com/dashboard) 并单击 Add New... > Project
+2. 导入包含 Quartz 项目的 Git 存储库
+3. 为项目命名（仅限小写字符和连字符）
+4. 检查这些配置选项是否已设置：
 
 | Configuration option                      | Value              |
 | ----------------------------------------- | ------------------ |
@@ -146,43 +146,42 @@ Before deploying to Vercel, a `vercel.json` file is required at the root of the 
 | Root Directory                            | `./`               |
 | Build and Output Settings > Build Command | `npx quartz build` |
 
-5. Press Deploy. Once it's live, you'll have 2 `*.vercel.app` URLs to view the page.
+5. 单击 Deploy，一旦上线，您将有 2 个 `*.vercel.app` 网址来查看该页面。
 
-### Custom Domain
+### 自定义域
 
 > [!note]
-> If there is something already hosted on the domain, these steps will not work without replacing the previous content. As a workaround, you could use Next.js rewrites or use the next section to create a subdomain.
+> 如果在此域名上已托管某些内容，则如果不替换掉以前的内容，以下的步骤将不起作用。要解决此问题，您可以使用 Next.js 重写或参考下一部分[[#使用子域]]。
 
-1. Update the `baseUrl` in `quartz.config.js` if necessary.
-2. Go to the [Domains - Dashboard](https://vercel.com/dashboard/domains) page in Vercel.
-3. Connect the domain to Vercel
-4. Press "Add" to connect a custom domain to Vercel.
-5. Select your Quartz repository and press Continue.
-6. Enter the domain you want to connect it to.
-7. Follow the instructions to update your DNS records until you see "Valid Configuration"
+1. 如有必要，请先更新 `quartz.config.js` 中的 `baseUrl` 
+2. 转到 Vercel 中的 [Domains - Dashboard](https://vercel.com/dashboard/domains) 页面
+3. 将域连接到 Vercel
+4. 单击 Add 将自定义域连接到 Vercel
+5. 选择您的 Quartz 存储库并单击 Continue
+6. 输入您想要连接到的域名
+7. 按照说明更新您的 DNS 记录，直到您看到 Valid Configuration
 
-### Use a Subdomain
+### 使用子域
 
-Using `docs.example.com` is an example of a subdomain. They're a simple way of connecting multiple deployments to one domain.
+使用 `docs.example.com` 是子域的一个示例，它们是将多个部署连接到一个域名的一种简单方法。
 
-1. Update the `baseUrl` in `quartz.config.js` if necessary.
-2. Ensure your domain has been added to the [Domains - Dashboard](https://vercel.com/dashboard/domains) page in Vercel.
-3. Go to the [Vercel Dashboard](https://vercel.com/dashboard) and select your Quartz project.
-4. Go to the Settings tab and then click Domains in the sidebar
-5. Enter your subdomain into the field and press Add
+1. 如有必要，请先更新 `quartz.config.js` 中的 `baseUrl`
+2. 确保您的域已添加到 Vercel 中的 [Domains - Dashboard](https://vercel.com/dashboard/domains) 页面
+3. 转到 [Vercel Dashboard](https://vercel.com/dashboard) 并选择您的 Quartz 项目
+4. 转到 Settings 选项卡，然后单击侧栏中的 Domains
+5. 在字段中输入您的子域，然后单击 Add
 
 ## Netlify
 
-1. Log in to the [Netlify dashboard](https://app.netlify.com/) and click "Add new site".
-2. Select your Git provider and repository containing your Quartz project.
-3. Under "Build command", enter `npx quartz build`.
-4. Under "Publish directory", enter `public`.
-5. Press Deploy. Once it's live, you'll have a `*.netlify.app` URL to view the page.
-6. To add a custom domain, check "Domain management" in the left sidebar, just like with Vercel.
-
+1. 登录到 [Netlify dashboard](https://app.netlify.com/) 并单击 Add new site
+2. 选择 Git provider 和包含 Quartz 项目的仓库
+3. 在 Build command 下输入 `npx quartz build`
+4. 在 Publish directory 下输入 `public`
+5. 单击 Deploy，一旦上线，您将有一个 `*.netlify.app` 的 URL 来查看该页面。
+6. 要添加自定义域，请选中左侧边栏中的 Domain management，随后像使用 Vercel 一样添加
 ## GitLab Pages
 
-In your local Quartz, create a new file `.gitlab-ci.yaml`.
+在本地 Quartz 中，创建一个新文件 `.gitlab-ci.yaml`
 
 ```yaml title=".gitlab-ci.yaml"
 stages:
@@ -225,6 +224,6 @@ pages:
       - public
 ```
 
-When `.gitlab-ci.yaml` is commited, GitLab will build and deploy the website as a GitLab Page. You can find the url under `Deploy > Pages` in the sidebar.
+提交 `.gitlab-ci.yaml` 后，GitLab 将构建网站并将其部署为 GitLab 页面。您可以在侧边栏中的 `Deploy > Pages` 下找到该网址。
 
-By default, the page is private and only visible when logged in to a GitLab account with access to the repository but can be opened in the settings under `Deploy` -> `Pages`.
+默认情况下，该页面是私有的，仅在登录有权访问存储库的 GitLab 帐户时可见，但可以在 `Deploy` -> `Pages` 下的设置中打开。

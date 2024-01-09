@@ -1,19 +1,19 @@
 ---
-title: "Upgrading Quartz"
+title: 升级 Quartz
 ---
 
 > [!note]
-> This is specifically a guide for upgrading Quartz 4 version to a more recent update. If you are coming from Quartz 3, check out the [[migrating from Quartz 3|migration guide]] for more info.
+> 这是将 Quartz 4 版本升级到最新更新的指南，如果您需要从 Quartz 3 迁移到 Quartz 4，请参阅[[migrating from Quartz 3|迁移指南]]。
 
-To fetch the latest Quartz updates, simply run
+要获取最新的 Quartz 更新，只需运行
 
 ```bash
 npx quartz update
 ```
 
-As Quartz uses [git](https://git-scm.com/) under the hood for versioning, updating effectively 'pulls' in the updates from the official Quartz GitHub repository. If you have local changes that might conflict with the updates, you may need to resolve these manually yourself (or, pull manually using `git pull origin upstream`).
+由于 Quartz 在底层使用 [git](https://git-scm.com/) 进行版本控制，因此更新可以有效地从官方 Quartz GitHub 存储库中 pull 更新。如果您的本地更改可能与更新冲突，您可能需要自己手动解决这些问题（或者使用 `git pull origin upstream` 手动拉取）。
 
 > [!hint]
-> Quartz will try to cache your content before updating to try and prevent merge conflicts. If you get a conflict mid-merge, you can stop the merge and then run `npx quartz restore` to restore your content from the cache.
+> Quartz 会在更新之前尝试缓存您的内容，以防止合并冲突。如果在合并过程中发生冲突，您可以停止合并，然后运行 ​​ `npx quartz restore` 从缓存中恢复内容。
 
-If you have the [GitHub desktop app](https://desktop.github.com/), this will automatically open to help you resolve the conflicts. Otherwise, you will need to resolve this in a text editor like VSCode. For more help on resolving conflicts manually, check out the [GitHub guide on resolving merge conflicts](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line#competing-line-change-merge-conflicts).
+如果您安装了 [GitHub desktop app](https://desktop.github.com/)它将自动打开以帮助您解决冲突。否则，您将需要在 VSCode 等文本编辑器中解决此问题。有关手动解决冲突的更多帮助，请参阅 [GitHub guide on resolving merge conflicts](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line#competing-line-change-merge-conflicts).

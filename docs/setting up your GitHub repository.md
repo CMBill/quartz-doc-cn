@@ -1,18 +1,18 @@
 ---
-title: Setting up your GitHub repository
+title: 设置您的 GitHub 存储库
 ---
 
-First, make sure you have Quartz [[index#🪴 Get Started|cloned and setup locally]].
+首先，确保您已在本地[[index#🪴 Get Started|克隆并设置了 Quartz]].
 
-Then, create a new repository on GitHub.com. Do **not** initialize the new repository with `README`, license, or `gitignore` files.
+然后，在 GitHub.com 上创建一个新存储库。**不要**使用 `README` 、license或 `gitignore` 文件初始化新存储库。
 
 ![[github-init-repo-options.png]]
 
-At the top of your repository on GitHub.com's Quick Setup page, click the clipboard to copy the remote repository URL.
+在 GitHub 存储库的 Quick Setup 页面顶部，单击剪贴板以复制远程存储库 URL。
 
 ![[github-quick-setup.png]]
 
-In your terminal of choice, navigate to the root of your Quartz folder. Then, run the following commands, replacing `REMOTE-URL` with the URL you just copied from the previous step.
+在您选择的 Terminal 中，导航到 Quartz 文件夹的根目录。随后运行以下命令，将 `REMOTE-URL` 替换为您刚刚从上一步复制的 URL。
 
 ```bash
 # add your repository
@@ -22,18 +22,17 @@ git remote add origin REMOTE-URL
 git remote add upstream https://github.com/jackyzha0/quartz.git
 ```
 
-To verify that you set the remote URL correctly, run the following command.
+要验证您是否正确设置远程 URL，请运行以下命令。
 
 ```bash
 git remote -v
 ```
 
-Then, you can sync the content to upload it to your repository.
+然后，您可以同步您的内容到您的存储库。
 
 ```bash
 npx quartz sync --no-pull
 ```
 
 > [!hint]
-> If `npx quartz sync` fails with `fatal: --[no-]autostash option is only valid with --rebase`, you
-> may have an outdated version of `git`. Updating `git` should fix this issue.
+> 如果执行 `npx quartz sync` 失败并出现 `fatal: --[no-]autostash option is only valid with --rebase` 的报错，您的 `git` 版本可能已过时，更新 `git` 应该可以解决此问题。
