@@ -1,8 +1,9 @@
 ---
 title: 欢迎使用 Quartz 4
 ---
+**本站点提供了 Quartz 文档的非官方中文翻译，目前正在翻译中。由于译者水平有限，翻译质量可能不尽人意，如出现任何错误与遗漏，请以[官方英文原版](https://quartz.jzhao.xyz/)为准，如有任何修改建议或意见，欢迎在 [GitHub 仓库](https://github.com/CMBill/quartz-doc-cn)提交 PR 或 Issue。**
 
-Quartz 是一款快速、具有丰富插件的静态站点生成器，可将 Markdown 内容转换为功能齐全的网站。成千上万的学生、开发人员和教师已经在使用 Quartz 将个人笔记、网站和[数字花园](https://jzhao.xyz/posts/networked-thought) 发布到网络上。
+Quartz 是一款快速、具有丰富插件的静态站点生成器，可将 Markdown 内容转换为功能齐全的网站。成千上万的学生、开发人员和教师已经在使用 Quartz 将个人笔记、网站和[数字花园](https://jzhao.xyz/posts/networked-thought)发布到网络上。
 
 ## 🪴 开始使用
 
