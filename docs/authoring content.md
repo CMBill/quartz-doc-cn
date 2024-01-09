@@ -37,7 +37,7 @@ Quartz 原生支持的一些常见的 frontmatter 字段：
 当您对您 Quartz 的内容感到满意时，您可以通过执行 `npx quartz sync` 将更改同步保存到 GitHub。
 
 > [!hint] 其他参数选项
-> 要获得完整的帮助选项，您可以运行 `npx quartz sync --help`.
+> 要获得完整的帮助选项，您可以运行 `npx quartz sync --help`。
 >
 > 其中大多数都有合理的默认值，但如果您需要自定义设置，则可以覆盖它们：
 >
