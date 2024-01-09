@@ -39,7 +39,7 @@ Quartz 是一个静态站点生成器，它是如何工作的？
          1. 使用 [Lightning CSS](https://github.com/parcel-bundler/lightningcss) 对 CSS 进行缩小和转换，以添加供应商前缀并进行语法降级。
          2. 将 Scripts 分为 `beforeDOMLoaded` 和 `afterDOMLoaded` 两部分，并分别插入 `<head>` 和 `<body>` 中。
       3. 最后，每个发射器插件负责输出并将其自己输出的文件写入磁盘。
-   6. If the `--serve` flag was detected, we also set up another file watcher to detect content changes (only `.md` files). We keep a content map that tracks the parsed AST and plugin data for each slug and update this on file changes. Newly added or modified paths are rebuilt and added to the content map. Then, all the filters and emitters are run over the resulting content map. This file watcher is debounced with a threshold of 250ms. On success, we send a client refresh signal using the passed in callback function.如果检测到 `--serve` 参数，我们还会设置另一个文件监视器来检测内容更改（仅 `.md` 文件）。我们会保留一个内容映射用于跟踪每个 slug 的已解析 AST 和插件数据，并在文件更改时更新此映射。新添加或修改的路径将被重建并添加到内容映射中，随后所有过滤器和发射器都在新生成的内容映射上运行。该文件监视器以 250ms 的阈值进行去抖动。成功后，我们使用传入的回调函数发送客户端刷新信号。
+   6. 如果检测到 `--serve` 参数，我们还会设置另一个文件监视器来检测内容更改（仅 `.md` 文件）。我们会保留一个内容映射用于跟踪每个 slug 的已解析 AST 和插件数据，并在文件更改时更新此映射。新添加或修改的路径将被重建并添加到内容映射中，随后所有过滤器和发射器都在新生成的内容映射上运行。该文件监视器以 250ms 的阈值进行去抖动。成功后，我们使用传入的回调函数发送客户端刷新信号。
 
 ## 在客户端
 
